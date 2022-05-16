@@ -28,7 +28,7 @@ class CompanyListingsViewModel @Inject constructor(
 
     fun onEvent(event: CompanyListingEvent) {
         when(event) {
-            is CompanyListingEvent.refresh -> {
+            is CompanyListingEvent.Refresh -> {
                 getCompanyListings(fetchFromRemote = true)
             }
             is CompanyListingEvent.onSearchQueryChange -> {
