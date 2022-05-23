@@ -1,6 +1,8 @@
 package com.riahi.stockmarketapp.data.mapper
 
 import com.riahi.stockmarketapp.data.local.CompanyListingEntity
+import com.riahi.stockmarketapp.data.remote.dto.CompanyInfoDto
+import com.riahi.stockmarketapp.domain.model.CompanyInfo
 import com.riahi.stockmarketapp.domain.model.CompanyListing
 
 fun CompanyListingEntity.toCompanyListing(): CompanyListing {
@@ -16,5 +18,15 @@ fun CompanyListing.toCompanyListingEntity(): CompanyListingEntity {
         name = name,
         symbol = symbol,
         exchange = exchange
+    )
+}
+
+fun CompanyInfoDto.toCompanyInfo(): CompanyInfo {
+    return CompanyInfo(
+        symbol = symbol ?: "",
+        description = description ?: "",
+        name = name ?: "",
+        country = country ?: "",
+        industry = industry ?: ""
     )
 }
